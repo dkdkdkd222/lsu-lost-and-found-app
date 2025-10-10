@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-const FoundPage = () => {
+const SignUp = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const FoundPage = () => {
   )
 }
 
-export default FoundPage
+export default SignUp

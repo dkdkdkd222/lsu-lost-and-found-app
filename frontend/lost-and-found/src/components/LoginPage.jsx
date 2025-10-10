@@ -26,21 +26,21 @@ const LoginPage = () => {
                     <div className = "emailField">
                     <img src = {githubLogo} className = "github"/>
                     <label className = "emailLabel" htmlFor="email"> Your email</label>
-                    <input className = "emailInput" placeholder = "e.g.johnmacgee@gmail.com" type = "email"/>
+                    <input required className = "emailInput" placeholder = "e.g.johnmacgee@gmail.com" type = "email"/>
                     <div className = "emailBorder"></div>
                     </div>
                     {/* Password Container */}
                     <div className = "passwordField">
                       <img src = {keyLogo} className = "key"/>
                     <label className = "passwordLabel">Your password </label>
-                      <input className = "passwordInput" placeholder = "e.g.macgee123456" type = "password"/>
+                      <input required className = "passwordInput" placeholder = "e.g.macgee123456" type = "password"/>
                       <div className = "passwordBorder"></div>
                     </div>
                     <button id = "submitButton" type = "submit">Sign In</button>
                   </form>
                 </div>
                 <div className = "optionsContainer">
-                <a className = "createAccount">Create Account</a>
+                <Link to="/signup" className = "createAccount">Create Account</Link>
                 <a className = "forgotPass">Forgot Password?</a>
                   </div>
                   </div>

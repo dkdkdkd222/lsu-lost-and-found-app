@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.lsuLogoLogin {
+  width: 120px;
+  position: absolute;
+  left: 20px;
+  top: 30px;
+  height: 40px;
+}
+
+.navigationLoginContainer {
+  display: flex;
+  height: 100px;
+  border: none;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+}
+
+.loginContainer {
+  background-color: white;
+  width: 45vw;
+  height: 45vh;
+  padding: 30px;
+  position: relative;
+  left: 392px;
+  top: 95px;
+  border: 1px solid black;
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 25%;
+  left: 1%;
+}
+
+.optionsContainer > a {
+  font-size: 18px;
+}
+
+.createAccount {
+position: relative;
+left: 25%;
+}
+
+.forgotPass {
+  position: relative;
+  left: 35%;
+}
+.lsuCampusImg {
+  width: 315%;
+  height: 605px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: -150%;
+  top: -24%;
+  z-index: -1;
+}
+.footerLoginContainer {
+  border: none;
+position: relative;
+transform: translateY(232px);
+height: 120px;
+background-color: #949191;
+position: relative;
+}
+
+.emailLabel, .passwordLabel {
+  font-size: 17px;
+}
+
+.emailLabel {
+position: relative;
+top: -35px;
+left: 33%;
+}
+
+.passwordLabel {
+  position: relative;
+  left: 33%;
+  top: -7px;
+}
+input {
+  background-color: #DDD8D8;
+  width: 70%;
+  height: 34px;
+  margin-left: 33%;
+  border: 1px solid black;
+  padding-left: 45px;
+  font-size: 15px;
+}
+
+input::placeholder {
+  position: relative;
+  left: 1px;
+  color: #787171;
+  font-size: 15px;
+}
+
+.emailInput {
+  position: relative;
+  top: -25px;
+}
+
+#submitButton {
+  display: flex;
+  background-color: #502E81;
+  color: white;
+  border: 2px solid  #FFEA00;
+  font-size: 17px;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: 35px;
+  border-radius: 15px;
+  margin-left:45%;
+  margin-top: 35px;
+  cursor: pointer;
+}
+
+.github {
+  position: relative;
+  width: 5%;
+  height: 21px;
+  left: 34.5%;
+  top: 23px;
+  z-index: 3;
+}
+
+.key {
+  position: relative;
+  width: 5%;
+  height: 21px;
+  left: 34.5%;
+  top: 47px;
+  z-index: 3;
+}
+
+.emailField {
+  display: flex;
+  flex-direction: column;
+}
+
+.passwordField {
+  display: flex;
+  flex-direction: column;
+}
+
+.formContainer {
+  display: grid;
+  place-items: center;
+  align-items: center;
+  position: relative;
+  top: 17%;
+  left: -15%;
+}
+
+.reportLostLogin, .reportFoundLogin, .logInLogin, .signUpLogin {
+color: black;
+text-decoration: none;
+font-size: 20px;
+position: relative;
+left: 35%;
+}
+
+.emailBorder {
+  position: absolute;
+  left: 35.4%;
+  top: 17px;
+  background-color: rgb(190, 188, 188);
+  border: none;
+  color: black;
+  width: 7%;
+  height: 32px;
+  z-index: 2;
+}
+
+.passwordBorder {
+  position: absolute;
+  left: 35.3%;
+  top: 117px;
+  background-color: rgb(190, 188, 188);
+  border: none;
+  color: black;
+  width: 7%;
+  height: 32px;
+  z-index: 2;
+}

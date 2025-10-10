@@ -1,39 +1,51 @@
 import React from 'react'
 import {Link} from "react-router-dom";
-import lsuLogo from '../images/lsulogo.png';
+import lsuLoginLogo from '../images/lsulogo.png';
 import lsuCampus from '../images/lsucampus.jpg'
-import '../styles/lostpage.css'
+import githubLogo from '../images/githublogo.png'
+import keyLogo from '../images/key.png'
+import '../styles/login.css'
 const LoginPage = () => {
   return (
     <div>
+      {/* Navigation Container */}
               <div className = "navigationLoginContainer">
-                <Link to="/"><img src = {lsuLogo} className = "lsuLogoImg"/></Link>
-                <Link to="/lost" className = "reportLost">Report Lost</Link>
-                <Link to="/found" className = "reportFound">Report Found</Link>
-                <Link to="/login"className = "logIn">Log In</Link>
-                <Link to="/signup" className = "signUp">Sign Up</Link>
+                <Link to="/"><img src = {lsuLoginLogo} className = "lsuLogoLogin"/></Link>
+                <Link to="/lost" className = "reportLostLogin">Report Lost</Link>
+                <Link to="/found" className = "reportFoundLogin">Report Found</Link>
+                <Link to="/login"className = "logInLogin">Log In</Link>
+                <Link to="/signup" className = "signUpLogin">Sign Up</Link>
               </div>
 
-              <div className = "loginContainer">
-                <div className = "formContainer">
+{/* Form Container */}
+                <div className = "loginContainer">
+                  <img src = {lsuCampus} className = "lsuCampusImg"/>
+                  <div className =  "formContainer">
                   <form>
-                    <label placeholder = "e.g.johnmacgee@gmail.com" htmlFor="email"> Your email
-                    <input type = "email"/>
-                    </label>
-                    <label placeholder = "e.g.macgee123456">Your password
-                      <input type = "password"/>
-                    </label>
-                    <br/>
-                    <button type = "submit">Sign In</button>
+                    {/* Email Container */}
+                    <div className = "emailField">
+                    <img src = {githubLogo} className = "github"/>
+                    <label className = "emailLabel" htmlFor="email"> Your email</label>
+                    <input className = "emailInput" placeholder = "e.g.johnmacgee@gmail.com" type = "email"/>
+                    <div className = "emailBorder"></div>
+                    </div>
+                    {/* Password Container */}
+                    <div className = "passwordField">
+                      <img src = {keyLogo} className = "key"/>
+                    <label className = "passwordLabel">Your password </label>
+                      <input className = "passwordInput" placeholder = "e.g.macgee123456" type = "password"/>
+                      <div className = "passwordBorder"></div>
+                    </div>
+                    <button id = "submitButton" type = "submit">Sign In</button>
                   </form>
                 </div>
                 <div className = "optionsContainer">
-                  <p>Create Account</p>
-                  <p>Forgot Password</p>
+                <a className = "createAccount">Create Account</a>
+                <a className = "forgotPass">Forgot Password?</a>
                   </div>
-              </div>
+                  </div>
 
-               <div className = "footerContainer">
+               <div className = "footerLoginContainer">
                       <div className = "siteLinks">
                         <h3 className = "siteTitle">Site</h3>
                       <a href="https://www.lsu.edu">lsu.edu</a>

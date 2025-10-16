@@ -73,7 +73,7 @@ left: 35%;
   transform: translateY(15px);
 }
 
-#firstName, #lastName, #emailAddress, #itemType, #itemName, #itemLastSeen, #phoneNum {
+#firstName, #lastName, #emailAddress, #itemType, #itemName, #itemFound, #phoneNum {
   background-color: white;
   border: 1px solid black
 }
@@ -131,7 +131,7 @@ left: 35%;
   top: -7px;
 }
 
-#itemLastSeen, #phoneNum {
+#itemFound, #phoneNum {
   width: 85%;
   padding-left: 7px;
 }
@@ -209,7 +209,7 @@ left: 1%;
 color: black;
 }
 
-#itemLastSeen::placeholder, #phoneNum::placeholder {
+#itemFound::placeholder, #phoneNum::placeholder {
   position: relative;
   left: 1%;
   color: black;

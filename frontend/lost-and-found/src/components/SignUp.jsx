@@ -49,7 +49,7 @@ const handleSubmit = (e) => {
                       <div className = "signUpContainer">
                         <img src = {lsuCampus} className = "lsuCampusImg"/>
                         <div className =  "formContainer">
-                        <form onSubmit = {handleSubmit}>
+                        <form action = "/submit-signup-data" method = "post" onSubmit = {handleSubmit}>
                           {/* Email Container */}
                           <div className = "emailField">
                           <img src = {githubLogo} className = "github"/>

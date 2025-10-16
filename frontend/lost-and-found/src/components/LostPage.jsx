@@ -1,9 +1,103 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from "react-router-dom";
 import lsuLostLogo from '../images/lsulogo.png';
 import lsuLostCampus from '../images/lsucampus.jpg';
 import '../styles/lostpage.css';
 const LostPage = () => {
+  const [errorColor, setErrorColor] = useState('#000');
+  const [errorColorBackground, setErrorColorBackground] = useState(null);
+  const [backgroundInfo, setBackgroundInfo] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    itemtype: "",
+    itemname: "",
+    itemlastseen: "",
+    phonenumber: "",
+    details: ""
+  });
+
+  const handleInfoChange = (e) => {
+    const {name, value} = e.target;
+    setBackgroundInfo((prev) => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+  const handleLostInfo = (e) => {
+    e.preventDefault();
+    const phoneDigitTest = /^[0-9]{10}$/;
+    const dateDigitTest = /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{2}$/;
+    let emptyInputs = !backgroundInfo.firstname || !backgroundInfo.lastname || !backgroundInfo.email || !backgroundInfo.itemname || !backgroundInfo.itemtype || !backgroundInfo.itemlastseen || !backgroundInfo.phonenumber;
+
+    if (emptyInputs) {
+      alert('There are one or more inputs that are not filled. Please fill in the information.');
+      setErrorColor('#DC2626');
+    setErrorColorBackground('#FEE2E2');
+    return;
+    }  else {
+      setErrorColor('#000');
+    setErrorColorBackground('#FEE2E2');
+    }
+
+     // Email @ handling example@gmail.com
+     if (!backgroundInfo.email.includes('@')) { 
+      alert('Incorrect email usage. Please include @');  
+      setErrorColor('#DC2626');
+      setErrorColorBackground('#FEE2E2');
+      return;
+    }
+    else {
+      setErrorColor('#000');
+      setErrorColorBackground('#FEE2E2');
+    }
+
+    // Date Handling DD/MM/YY
+    if (!dateDigitTest.test(backgroundInfo.itemlastseen)) {
+      alert('This is not a valid date. Try MM/DD/YY');
+      setErrorColor('#DC2626');
+      setErrorColorBackground('#FEE2E2');
+    }
+    else {
+      setErrorColor('#000');
+      setErrorColorBackground('#FEE2E2');
+    }
+
+    // Phone digit handling 225-XXX-XXXX
+    if (!phoneDigitTest.test(backgroundInfo.phonenumber)) {
+      alert('Incorrect 10-digit phone number. Please include 10 number digits');
+      setErrorColor('#DC2626');
+      setErrorColorBackground('#FEE2E2');
+      return;
+    }
+    else {
+      setErrorColor('#000');
+      setErrorColorBackground('#FEE2E2');
+    }
+
+    if (!emptyInputs && backgroundInfo.email.includes('@') && dateDigitTest.test(backgroundInfo.itemlastseen) && phoneDigitTest.test(backgroundInfo.phonenumber)) {
+      alert('Your form was submitted successfully');
+
+
+      fetch('/submit-lost-data', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(backgroundInfo)
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log('NOTE: the form has been sent to the database.');
+        })
+        .catch(error => {
+          console.log('NOTE: there was an error breaching the form to the database.', error);
+        })
+      }
+    }
+
+
+
   return (
     <div>
         {/* Navigation Container */}
@@ -18,16 +112,16 @@ const LostPage = () => {
                     <img src = {lsuLostCampus} className = "lsuCampusLostImg"/>
       <div className = "lostContainer">
         {/* Form Container */}
-        <form action = "/submit-lost-form-data" method = "post" className = "lostFormContainer">
+        <form onSubmit = {handleLostInfo} className = "lostFormContainer">
           <div className = "nameField">
-<input id = "firstName" required type = "text" placeholder = "*First Name"/>
-<input id = "lastName" required type = "text" placeholder = "*Last Name"/>
+<input onChange = {handleInfoChange} id = "firstName"  style = {{borderColor: errorColor, backgroundColor: errorColorBackground}} name = "firstname" value = {backgroundInfo.firstname} type = "text" placeholder = "*First Name"/>
+<input onChange = {handleInfoChange} id = "lastName"  style = {{borderColor: errorColor, backgroundColor: errorColorBackground}} name = "lastname" value = {backgroundInfo.lastname} type = "text" placeholder = "*Last Name"/>
           </div>
           <div className = "emailLostField">
-            <input type = "email" id = "emailAddress" placeholder = "*Email Address" required/>
+            <input onChange = {handleInfoChange} style = {{borderColor: errorColor, backgroundColor: errorColorBackground}}  name = "email" type = "email" value = {backgroundInfo.email} id = "emailAddress" placeholder = "*Email Address"/>
           </div>
           <div className = "itemTNField">
-            <select id = "itemType" defaultValue = "" required>
+            <select onChange = {handleInfoChange}  style = {{borderColor: errorColor, backgroundColor: errorColorBackground}} name = "itemtype" value = {backgroundInfo.itemtype} id = "itemType">
             <option value= "">*Select Item Type</option>
             <option value = "electronics">Electronics</option>
             <option value = "clothing">Clothing</option>
@@ -41,14 +135,14 @@ const LostPage = () => {
             <option value = "personal">Personal Item</option>
             <option value = "other">Other</option>
             </select>
-            <input id = "itemName" placeholder = "*Item Name"/>
+            <input onChange = {handleInfoChange} name = "itemname" value = {backgroundInfo.itemname} style = {{borderColor: errorColor, backgroundColor: errorColorBackground}} id = "itemName" placeholder = "*Item Name"/>
           </div>
           <div className = "itemLSPhoneNumField">
-            <input type = "text" id = "itemLastSeen" placeholder = "*Item Last Seen"/>
-            <input type = "text" id = "phoneNum" placeholder = "*Phone Number"/>
+            <input onChange = {handleInfoChange} name = "itemlastseen" value = {backgroundInfo.itemlastseen} style = {{borderColor: errorColor, backgroundColor: errorColorBackground}} type = "text" id = "itemLastSeen" placeholder = "*Item Last Seen"/>
+            <input onChange = {handleInfoChange} name = "phonenumber" value = {backgroundInfo.phonenumber} style = {{borderColor: errorColor, backgroundColor: errorColorBackground}} type = "text" id = "phoneNum" placeholder = "*Phone Number"/>
           </div>
           <div className = "textField">
-            <textarea placeholder = "*Additional Details"rows="6" cols="72"/>
+            <textarea name = "details" value = {backgroundInfo.details} onChange = {handleInfoChange} placeholder = "*Additional Details"rows="6" cols="72"/>
           </div>
           <button id = "lostSubmit" type = "submit">Submit</button>
         </form>
@@ -74,5 +168,4 @@ const LostPage = () => {
     </div>
   )
 }
-
 export default LostPage

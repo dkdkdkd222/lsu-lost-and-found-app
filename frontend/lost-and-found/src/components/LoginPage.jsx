@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from "react-router-dom";
 import lsuLoginLogo from '../images/lsulogo.png';
 import lsuCampus from '../images/lsucampus.jpg'
@@ -6,6 +6,38 @@ import githubLogo from '../images/githublogo.png'
 import keyLogo from '../images/key.png'
 import '../styles/login.css'
 const LoginPage = () => {
+const[email, setEmail] = useState('');
+const [password, setPassword] = useState('');
+const [emailColor, setEmailColor] = useState("#000");
+const [emailBackgroundColor, setEmailBackgroundColor] = useState(null);
+const [passwordBackgroundColor, setPasswordBackgroundColor] = useState(null);
+const [passwordColor, setPasswordColor] = useState("#000");
+
+const handleEmailChange = (e) => setEmail(e.target.value);
+const handlePasswordChange = (e) => setPassword(e.target.value);
+
+const handleSubmit = (e) => {
+e.preventDefault();
+ if (email.trim() === "") {
+  alert('There is no email on set. Please enter an email.');
+  setEmailColor('#DC2626');
+  setEmailBackgroundColor('#FEE2E2');
+ }
+ else {
+  setEmailColor('#000');
+  setEmailBackgroundColor(null);
+ }
+
+ if (password.trim() === "") {
+  alert('There is no password on set. Please enter a password.');
+  setPasswordColor('#DC2626');
+  setPasswordBackgroundColor('#FEE2E2');
+ }
+ else {
+  setPasswordColor('#000');
+  setPasswordBackgroundColor(null);
+ }
+}
   return (
     <div>
       {/* Navigation Container */}
@@ -21,19 +53,19 @@ const LoginPage = () => {
                 <div className = "loginContainer">
                   <img src = {lsuCampus} className = "lsuCampusImg"/>
                   <div className =  "formContainer">
-                  <form>
+                  <form onSubmit = {handleSubmit}>
                     {/* Email Container */}
                     <div className = "emailField">
                     <img src = {githubLogo} className = "github"/>
                     <label className = "emailLabel" htmlFor="email"> Your email</label>
-                    <input required className = "emailInput" placeholder = "e.g.johnmacgee@gmail.com" type = "email"/>
+                    <input value = {email} onChange = {handleEmailChange} style ={{borderColor: emailColor, backgroundColor: emailBackgroundColor || ""}} className = "emailInput" placeholder = "e.g.johnmacgee@gmail.com" type = "email"/>
                     <div className = "emailBorder"></div>
                     </div>
                     {/* Password Container */}
                     <div className = "passwordField">
                       <img src = {keyLogo} className = "key"/>
                     <label className = "passwordLabel">Your password </label>
-                      <input required className = "passwordInput" placeholder = "e.g.macgee123456" type = "password"/>
+                      <input value = {password} onChange = {handlePasswordChange} style ={{borderColor: passwordColor, backgroundColor: passwordBackgroundColor || ""}} className = "passwordInput" placeholder = "e.g.macgee123456" type = "password"/>
                       <div className = "passwordBorder"></div>
                     </div>
                     <button id = "submitButton" type = "submit">Sign In</button>
@@ -64,7 +96,7 @@ const LoginPage = () => {
               </div>
                     </div>
               </div>
-  )
-}
+  );
+};
 
 export default LoginPage

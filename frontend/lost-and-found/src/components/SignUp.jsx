@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import lsuLoginLogo from '../images/lsulogo.png';
 import lsuCampus from '../images/lsucampus.jpg'
@@ -6,6 +6,34 @@ import githubLogo from '../images/githublogo.png'
 import keyLogo from '../images/key.png'
 import '../styles/signup.css'
 const SignUp = () => {
+const [email, setEmail] = useState('');
+const [password, setPassword] = useState('');
+const [emailColor, setEmailColor] = useState('#000');
+const [emailBackground, setEmailBackground] = useState(null);
+const [passwordColor, setPasswordColor] = useState('#000');
+const [passwordBackground, setPasswordBackground] = useState(null);
+
+const emailChange = (e) => setEmail(e.target.value);
+const passwordChange = (e) => setPassword(e.target.value);
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  if (email.trim() === "") {
+    alert('There is no email on set. Please enter an email.');
+    setEmailColor('#DC2626');
+    setEmailBackground('#FEE2E2');
+  }
+  else {
+    setEmailColor('#000');
+    setEmailBackground(null);
+  }
+  
+  if (password.trim() === "") {
+    alert('There is no password on set. Please enter a password.');
+    setPasswordColor('#DC2626');
+    setPasswordBackground('#FEE2E2');
+  }
+}
   return (
     <div>
       {/* Navigation Container */}
@@ -21,19 +49,19 @@ const SignUp = () => {
                       <div className = "signUpContainer">
                         <img src = {lsuCampus} className = "lsuCampusImg"/>
                         <div className =  "formContainer">
-                        <form>
+                        <form onSubmit = {handleSubmit}>
                           {/* Email Container */}
                           <div className = "emailField">
                           <img src = {githubLogo} className = "github"/>
                           <label className = "emailLabel" htmlFor="email"> Your email</label>
-                          <input required className = "emailInput" placeholder = "e.g.johnmacgee@gmail.com" type = "email"/>
+                          <input value = {email} onChange ={emailChange} style = {{borderColor: emailColor, backgroundColor: emailBackground}} className = "emailInput" placeholder = "e.g.johnmacgee@gmail.com" type = "email"/>
                           <div className = "emailBorder"></div>
                           </div>
                           {/* Password Container */}
                           <div className = "passwordField">
                             <img src = {keyLogo} className = "key"/>
                           <label className = "passwordLabel">Your password </label>
-                            <input required className = "passwordInput" placeholder = "e.g.macgee123456" type = "password"/>
+                            <input value = {password} onChange={passwordChange} style = {{borderColor: passwordColor, backgroundColor: passwordBackground}}className = "passwordInput" placeholder = "e.g.macgee123456" type = "password"/>
                             <div className = "passwordBorder"></div>
                           </div>
                           <button id = "submitButton" type = "submit">Sign Up</button>

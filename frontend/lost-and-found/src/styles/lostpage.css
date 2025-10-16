@@ -1,0 +1,226 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.navigationLostContainer {
+  display: flex;
+  height: 100px;
+  border: none;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+}
+
+.lsuLostLogin {
+  width: 120px;
+  position: absolute;
+  left: 20px;
+  top: 30px;
+  height: 40px;
+}
+
+.lsuLostLogo {
+  width: 120px;
+  position: absolute;
+  left: 20px;
+  top: 30px;
+  height: 40px;
+}
+
+.lsuCampusLostImg {
+  width: 275%;
+  height: 605px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: -150%;
+  top: 12%;
+  z-index: -1;
+}
+
+.reportLost, .reportFound, .logInLost, .signUpLost {
+color: black;
+text-decoration: none;
+font-size: 20px;
+position: relative;
+left: 35%;
+}
+
+.footerLostContainer {
+  border: none;
+  position: absolute;
+  transform: translateY(600px);
+  height: 120px;
+  background-color: #949191;
+  position: relative;
+}
+
+.lostContainer {
+  background-color: #D5D2D2;
+  border: none;
+  width: 40%;
+  height: 375px;
+  position: absolute;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  left: 30%;
+  top: 25%;
+}
+
+.lostContainer > * {
+  transform: translateY(15px);
+}
+
+#firstName, #lastName, #emailAddress, #itemType, #itemName, #itemLastSeen, #phoneNum {
+  background-color: white;
+  border: 1px solid black
+}
+
+.nameField {
+  display: grid;
+  place-content: center;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  left: -12.5%;
+  top: -90px;
+}
+
+#lastName {
+  margin-left: 87px;
+}
+
+#firstName, #lastName {
+  width: 85%;
+  height: 33px;
+  padding-left: 7px;
+}
+
+.emailLostField {
+  position: absolute;
+  left: -38.8%;
+  top: -20%;
+  width: 130%;
+}
+
+.itemTNField {
+  display: grid;
+  place-content: center;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  left: -12.5%;
+  top: -24px;
+}
+
+#itemType, #itemName {
+  width: 85%;
+}
+
+#itemName {
+  margin-left: 87px;
+  padding-left: 7px;
+}
+
+.itemLSPhoneNumField {
+  display: grid;
+  place-content: center;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  left: -12.5%;
+  top: -7px;
+}
+
+#itemLastSeen, #phoneNum {
+  width: 85%;
+  padding-left: 7px;
+}
+
+#phoneNum {
+  margin-left: 87px;
+}
+
+textarea {
+  position: relative;
+  left: 4%;
+  top: 12px;
+  border: 1px solid black;
+}
+
+#lostSubmit {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  left: 38%;
+  top: 110%;
+  height: 35px;
+  width: 23%;
+  font-size: 18px;
+  cursor: pointer;
+  border: 1px solid black;
+  background-color: white;
+  color: #502E81;
+  text-shadow: 1px 0 #FFEA00, 1px 0 #FFEA00, 1px 0 #FFEA00, 1px 0 #FFEA00; 
+}
+
+#lostSubmit:hover {
+  background-color: #6B3FB3;
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
+
+.lostTitle {
+  text-align: center;
+  position: absolute;
+  z-index: 5;
+  font-size: 32px;
+  top: 60px;
+  color: #502E81;
+  text-shadow: 1px 0 #FFEA00, 1px 0 #FFEA00, 1px 0 #FFEA00, 1px 0 #FFEA00; 
+}
+
+#firstName::placeholder {
+  position: relative;
+  left: 1%;
+  color: black;
+}
+
+#lastName::placeholder {
+  position: relative;
+  left: 1%;
+  color: black;
+}
+
+#emailAddress::placeholder {
+position: relative;
+left: 0.2%;
+color: black;
+}
+
+#emailAddress {
+  padding-left: 7px;
+}
+
+#itemName::placeholder {
+position: relative;
+left: 1%;
+color: black;
+}
+
+#itemLastSeen::placeholder, #phoneNum::placeholder {
+  position: relative;
+  left: 1%;
+  color: black;
+}
+
+textarea::placeholder {
+  color: black;
+}
+
+#itemType {
+font-size: 15px;
+margin-left: 95px;
+background-color: white;
+}

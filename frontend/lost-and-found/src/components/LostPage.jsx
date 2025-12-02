@@ -112,6 +112,7 @@ const LostPage = () => {
                       <Link to="/lost" className = "reportLost">Report Lost</Link>
                       <Link to="/found" className = "reportFound">Report Found</Link>
                       <Link to="/login"className = "logInLost">Log In</Link>
+                      <Link to="/browse" className="browseItems">Browse Items</Link>
                       <Link to="/signup" className = "signUpLost">Sign Up</Link>
                     </div>
                     <img src = {lsuLostCampus} className = "lsuCampusLostImg"/>

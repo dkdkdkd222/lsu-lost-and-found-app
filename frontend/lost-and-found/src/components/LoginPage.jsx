@@ -63,6 +63,7 @@ e.preventDefault();
                 <Link to="/found" className = "reportFoundLogin">Report Found</Link>
                 <Link to="/login"className = "logInLogin">Log In</Link>
                 <Link to="/signup" className = "signUpLogin">Sign Up</Link>
+                <Link to="/browse" className="browseItems">Browse Items</Link>
               </div>
 
 {/* Form Container */}

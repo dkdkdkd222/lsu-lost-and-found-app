@@ -15,6 +15,7 @@ const MainPage = () => {
           <Link to="/found" className = "reportFound">Report Found</Link>
           <Link to="/login"className = "logIn">Log In</Link>
           <Link to="/signup" className = "signUp">Sign Up</Link>
+          <Link to="/browse" className="browseItems">Browse Items</Link>
         </div>
 
         {/* Main Page */}

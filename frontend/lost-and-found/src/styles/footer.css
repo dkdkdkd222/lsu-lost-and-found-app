@@ -1,0 +1,63 @@
+.footerClean {
+  width: 100%;
+  background: #f4f4f4;
+  padding: 35px 60px;
+  border-top: 1px solid #ddd;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+/* Each footer column */
+.footerSection {
+  min-width: 180px;
+}
+
+.footerSection h3 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  color: #461d7c; /* LSU purple */
+  font-weight: 700;
+}
+
+.footerSection a,
+.footerSection Link {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+
+.footerSection a:hover {
+  color: #fdd023; /* LSU Gold Hover */
+}
+
+.footerEmails {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Copyright section - aligned right */
+.footerCopyright {
+  text-align: right;
+  font-size: 14px;
+  color: #555;
+  min-width: 220px;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+  .footerClean {
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 20px;
+  }
+
+  .footerCopyright {
+    text-align: left;
+  }
+}

@@ -1,157 +1,239 @@
-* {
-  box-sizing: border-box;
+.homePage {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.homeHero {
+  position: relative;
+  width: 100vw;
+  height: 340px;
   margin: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: -40px;
+  overflow: hidden;
 }
 
-.navigationContainer {
-  display: flex;
-  height: 100px;
-  border: none;
-  justify-content: center;
-  gap: 15px;
-  align-items: center;
-}
-
-.lsuLogoImg {
-  width: 120px;
+.homeHeroImage {
   position: absolute;
-  left: 20px;
-  top: 30px;
-  height: 40px;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.8) saturate(1.6) blur(3px);
+  z-index: -1;
 }
 
-.reportLost, .reportFound, .logIn, .signUp {
-  font-size: 20px;
-  position: relative;
-  left: 35%;
-}
-
-.centralContainer {
-display: flex;
-justify-content: center;
-position: relative;
-align-items: center;
-top: 0px;
-}
-
-.lsuLibImg {
-  position: absolute;
+.homeHeroOverlay {
   width: 100%;
-  height: 622px;
-  object-fit: cover; /* makes it fill without stretching */
-  top: 0;
-  opacity: 40%;
-  left: 0;
-  z-index: 1;
-  filter: brightness(70%);
-}
-
-.buttonContainer {
+  height: 100%;
   display: flex;
   justify-content: center;
-  position: relative;
   align-items: center;
-  top: 215px;
-  gap: 45px;
 }
 
-.mainTitle {
-  font-size: 300%;
-  max-width: 320px;
+.homeHeroOverlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeHeroContent {
   text-align: center;
-  position: relative;
-  z-index: 5;
-  top: 200px;
-  color: #502E81;
-  text-shadow: 2px 0 #FFEA00, -2px 0 #FFEA00, -2px 0 #FFEA00, -2px 0 #FFEA00; 
+  color: #ffffff;
+  padding: 0 16px;
 }
 
-.lostButton {
-  padding: 18px;
-  background-color: #502E81;
-  color: #FFFFFF;
-  font-size: 13px;
-  font-weight: bold;
-  border: none;
-  width: 190px;
-  z-index: 5;
-  position: relative;
-  left: -40px;
-  cursor:pointer;
+.homeHeroTitle {
+  font-size: 32px;
+  margin-bottom: 8px;
 }
 
-.lostButton:hover, .foundButton:hover {
-  background-color: #6B3FB3;
-  transition: all 0.5s ease-in-out;
+.homeHeroText {
+  font-size: 15px;
+  max-width: 520px;
+  margin: 0 auto 20px auto;
 }
 
-
-.foundButton {
-  padding: 18px;
-  background-color: #502E81;
-  color: #FFFFFF;
-  font-size: 13px;
-  font-weight: bold;
-  border: none;
-  width: 150%;
-  z-index: 5;
-  position: relative;
-  left: -30px;
-  cursor:pointer;
+.homeHeroButtons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
 }
 
-.footerContainer {
-border: none;
-position: relative;
-transform: translateY(405px);
-height: 100px;
-background-color: #949191;
+.homeHeroBtn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
-.siteLinks {
-  position: relative;
-  top: 20px;
-  left: 130px;
+.mainHeroBtn {
+  background-color: #461d7c;
+  color: #ffffff;
+}
+
+.secondaryHeroBtn {
+  background-color: #fdd023;
+  color: #221c35;
+}
+
+.homeHeroBtn:hover {
+  opacity: 0.9;
+}
+
+.homeInfo {
+  padding: 28px 24px 8px 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.homeInfoRow {
+  max-width: 950px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.homeInfoCard {
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #e1e1e1;
+  padding: 16px 18px;
+}
+
+.homeInfoCard h2 {
+  font-size: 17px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.homeInfoCard p {
+  font-size: 14px;
+  color: #555;
+}
+
+.homeSteps {
+  padding: 20px 24px 30px 24px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.copyRight {
- position: relative;
- top: -30px;
- left: 600px;
- line-height: 28px;
- width: 19%;
+.homeStepsTitle {
+  font-size: 22px;
+  margin-bottom: 6px;
+  color: #333;
 }
 
-.contactLinks {
+.homeStepsText {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.homeStepsRow {
+  max-width: 950px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.homeStepCard {
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e4e4e4;
+  padding: 14px 16px 16px 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.homeStepNumber {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #461d7c;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 26px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.homeStepCard h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.homeStepCard p {
+  font-size: 14px;
+  color: #555;
+}
+
+.homeBottom {
+  padding: 10px 24px 40px 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.homeBottomBox {
+  max-width: 950px;
+  width: 100%;
+  border-radius: 10px;
+  background: #faf7ff;
+  border: 1px solid #e2dbff;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.homeBottomText h2 {
+  font-size: 18px;
+  margin-bottom: 4px;
+  color: #33125b;
+}
+
+.homeBottomText p {
+  font-size: 14px;
+  color: #555;
+}
+
+.homeBottomActions {
   display: flex;
   flex-direction: column;
-  position: relative;
-  top: -115px;
-  left: 86%;
+  gap: 6px;
+  align-items: flex-end;
 }
 
-.siteTitle {
-  font-size: 23px;
-  color: #502E81;
-  text-shadow: 1px 0 #FFEA00, -1px 0 #FFEA00, -1px 0 #FFEA00, -1px 0 #FFEA00; 
-}
-.contactTitle {
-  font-size: 23px;
-  color: #502E81;
-  text-shadow: 1px 0 #FFEA00, -1px 0 #FFEA00, -1px 0 #FFEA00, -1px 0 #FFEA00;  
-}
-
-.siteLinks > a {
-  font-size: 11px;
+.homeBottomBtn {
+  padding: 9px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  background-color: #461d7c;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-#kagraw, #knette, #cjenk, #jgrady, #rchav {
-  font-size: 11px;
+.homeBottomLink {
+  font-size: 13px;
+  color: #461d7c;
+  text-decoration: underline;
 }
 
-a:hover {
-  color: #b5b07b;
-  cursor:pointer;
+.homeBottomBtn:hover {
+  opacity: 0.9;
 }
+

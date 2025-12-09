@@ -1,0 +1,17 @@
+.layoutWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contentArea {
+  flex: 1;
+  display: flex;
+  justify-content: center;  
+  align-items: flex-start;  
+  padding: 40px 0;          
+}
+
+body {
+  overflow: auto;
+}

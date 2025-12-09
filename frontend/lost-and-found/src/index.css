@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.lsuButton {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #461d7c;
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.lsuButton:hover {
+  opacity: 0.85;
+}

@@ -1,0 +1,122 @@
+.reportContainer {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 16px;
+}
+
+.reportBox {
+  width: 100%;
+  max-width: 900px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 28px 32px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.reportTitle {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 8px;
+  color: #461d7c;
+}
+
+.reportText {
+  text-align: center;
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.reportOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.reportCard {
+  flex: 1 1 260px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 18px 20px;
+  background-color: #fafafa;
+}
+
+.reportCard h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.reportCard p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.reportButton {
+  display: block !important;
+  width: auto !important;
+  margin: 16px auto 0 auto !important;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  position: static !important;
+  left: 0 !important;
+}
+
+.reportLostBtn {
+  background-color: #461d7c;
+  color: #ffffff;
+}
+
+.reportFoundBtn {
+  background-color: #fdd023;
+  color: #221c35;
+}
+
+.reportButton:hover {
+  opacity: 0.9;
+}
+
+.reportNote {
+  margin-top: 22px;
+  font-size: 13px;
+  color: #666;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .reportBox {
+    padding: 22px 18px;
+  }
+
+  .reportTitle {
+    font-size: 22px;
+  }
+}
+
+.reportCard .reportBtn {
+  display: block;
+  background-color: #461d7c;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  width: 55%;
+  margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reportCard .reportBtn:hover {
+  opacity: 0.9;
+}

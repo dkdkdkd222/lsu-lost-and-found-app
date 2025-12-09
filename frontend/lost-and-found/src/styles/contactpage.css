@@ -1,4 +1,4 @@
-.lostPageWrapper {
+.contactWrapper {
   min-height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
@@ -6,46 +6,47 @@
   padding: 40px 16px;
 }
 
-.lostBox {
+.contactBox {
   width: 100%;
-  max-width: 640px;
+  max-width: 780px;
   background-color: #ffffff;
   border-radius: 10px;
-  padding: 26px 28px 30px 28px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  padding: 26px 28px 28px 28px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e4e4e4;
 }
 
-.lostTitle {
+.contactTitle {
   font-size: 26px;
   color: #461d7c;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
-.lostSubtitle {
+.contactText {
   font-size: 14px;
   color: #555;
   margin-bottom: 18px;
 }
 
-.lostForm {
+.contactForm {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  margin-bottom: 18px;
 }
 
-.lostFieldRow {
+.contactRow {
   width: 100%;
 }
 
-.lostLabel {
+.contactLabel {
   display: block;
   font-size: 14px;
   color: #333;
   margin-bottom: 4px;
 }
 
-.lostInput,
-.lostSelect {
+.contactInput {
   width: 100%;
   padding: 9px 11px;
   border-radius: 6px;
@@ -53,7 +54,7 @@
   font-size: 14px;
 }
 
-.lostTextarea {
+.contactTextarea {
   width: 100%;
   padding: 9px 11px;
   border-radius: 6px;
@@ -62,37 +63,56 @@
   resize: vertical;
 }
 
-.lostSubmitBtn {
-  margin-top: 8px;
-  width: 100%;
+.contactSubmitBtn {
+  margin-top: 4px;
   padding: 10px 0;
+  width: 180px;
   border-radius: 6px;
-  border: 1px solid #461d7c;
+  border: none;
   background-color: #461d7c;
   color: #ffffff;
   font-size: 15px;
+  font-weight: 500;
   cursor: pointer;
 }
 
-.lostSubmitBtn:disabled {
-  opacity: 0.7;
-  cursor: default;
+.contactSubmitBtn:hover {
+  opacity: 0.9;
 }
 
-.lostError {
-  margin-top: 4px;
+.contactStatus {
   font-size: 13px;
+  color: #217a33;
+  margin-top: 2px;
+}
+
+.contactStatus.error {
   color: #b3261e;
 }
 
-.lostSuccess {
-  margin-top: 4px;
-  font-size: 13px;
-  color: #217a33;
+.contactSideInfo {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #eee;
+}
+
+.contactSideInfo h2 {
+  font-size: 17px;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.contactSideInfo p {
+  font-size: 14px;
+  color: #555;
 }
 
 @media (max-width: 640px) {
-  .lostBox {
-    padding: 22px 18px 26px 18px;
+  .contactBox {
+    padding: 22px 18px 24px 18px;
+  }
+
+  .contactSubmitBtn {
+    width: 100%;
   }
 }

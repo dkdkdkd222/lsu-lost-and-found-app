@@ -1,0 +1,39 @@
+.headerContainer {
+  width: 100%;
+  height: 80px;
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 30px;
+  border-bottom: 1px solid #ddd;
+}
+
+.lsuLogoImg {
+  height: 45px;
+  display: block;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navLinks a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 19px;
+  letter-spacing: 0.3px;  
+  color: #461d7c;          
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+
+.navLinks a:hover {
+  color: #fdd023;
+  transition: 0.2s;
+}

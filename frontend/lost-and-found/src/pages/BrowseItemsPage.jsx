@@ -56,7 +56,7 @@ const BrowseItemsPage = () => {
 
     const userId = userData.user.id;
 
-    const { error } = await supabase.from("calims").insert({
+    const { error } = await supabase.from("claims").insert({
       item_id: itemId,
       claimer_id: userId,
       status: "pending",

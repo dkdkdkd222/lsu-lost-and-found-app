@@ -8,7 +8,7 @@ import { supabase } from '../config/supabase';
 const BrowseItemsPage = () => {
   const navigate = useNavigate();
   
-  // Current user state - Fixed as Carson Jenkins
+  
   const [currentUser] = useState({
     id: crypto.randomUUID(),
     email: "cjenk52@lsu.edu",
@@ -60,7 +60,7 @@ const BrowseItemsPage = () => {
     });
   };
 
-  // Fetch items from Supabase
+  // Get items from Supabase
   const fetchItems = async () => {
     try {
       setLoading(true);
@@ -83,7 +83,7 @@ const BrowseItemsPage = () => {
         return;
       }
       
-      // Map items to display format
+      // Map items
       const normalizedItems = (data || []).map(item => ({
         id: item.id,
         title: item.title?.trim() || 'Untitled Item',
@@ -114,7 +114,7 @@ const BrowseItemsPage = () => {
     fetchItems();
   }, [selectedSort]);
 
-  // ORIGINAL WORKING CLAIM FUNCTION
+
   const handleClaimSubmit = async () => {
     if (!claimMessage.trim()) {
       alert("Please enter a message explaining why this item is yours.");
@@ -134,7 +134,7 @@ const BrowseItemsPage = () => {
     setSubmittingClaim(true);
 
     try {
-      // ORIGINAL WORKING CODE
+
       const claimData = {
         item_id: selectedItem.id,
         claimer_id: currentUser.id,
@@ -155,7 +155,7 @@ const BrowseItemsPage = () => {
       if (error) {
         console.error('Error:', error);
         
-        // Simple error handling like original
+      
         if (error.message.includes('duplicate')) {
           alert('You have already claimed this item!');
         } else if (error.message.includes('foreign key')) {
@@ -197,7 +197,7 @@ const BrowseItemsPage = () => {
     }
   };
 
-  // Simple claim button click handler
+  // claim button
   const handleClaimClick = (item) => {
     if (!item || !item.id) {
       alert("Invalid item selected.");
@@ -219,7 +219,7 @@ const BrowseItemsPage = () => {
     setClaimMessage("");
   };
 
-  // Apply filters to items
+  // Apply filters 
   const getFilteredItems = () => {
     if (!items.length) return [];
     
@@ -244,27 +244,27 @@ const BrowseItemsPage = () => {
     return filtered;
   };
 
-  // Reset all filters
+  // Reset filters
   const resetFilters = () => {
     setSelectedLocation("All Locations");
     setSelectedCategory("All Categories");
     setSelectedSort("newest");
   };
 
-  // Handle Home button click
+  // Home button
   const handleHomeClick = () => {
     navigate('/');
   };
 
-  // Refresh data
+  
   const handleRefresh = () => {
     fetchItems();
   };
 
-  // Test claim function (optional - remove in production)
+  //test
   const testClaimFunction = async () => {
     try {
-      // Create a test claim
+       
       const testData = {
         item_id: crypto.randomUUID(),
         claimer_id: currentUser.id,
